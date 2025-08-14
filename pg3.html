@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia</title>
+</head>
+
+<body>
+    <header id="cabeza">
+        <img class="logo" src="Znote.png" width="auto" height="140px">
+        <h1><a href="pg1.html">Novidades</a></h1>
+        <h1><a href="pg2.html">Política</a></h1>
+        <h1><a href="pg4.html">Economia</a></h1>
+    </header>
+    <nav id="navezao">
+        <ul>
+            <li><a href="pg1.html">Novidades</a></li>
+            <li><a href="pg2.html">Política</a></li>
+            <li><a href="pg3.html">Tecnologia</a></li>
+            <li><a href="pg4.html">Economia</a></li>
+            <li><a href="pg5.html">Saúde</a></li>
+            <li><a href="pg6.html">Natureza</a></li>
+            <li><a href="pg7.html">Esporte</a></li>
+            <li><a href="pg8.html">Contato</a></li>
+        </ul>
+    </nav>
+    <button id="btn"><--</button>
+    <div id="navbtn">
+        <button id="fecalt">X</button>
+        <h2>Configurações</h2>
+        <label for="fontc" class="labc">Escolher fonte:</label> 
+        <select id="fontc"> 
+         <option value="Arial, sans-serif">Fonte 1</option> 
+         <option value="'Times New Roman', serif">Fonte 2</option>
+         <option value="'Courier New', monospace">Fonte 3</option>
+        </select>
+    </div>
+    <div class="fila">
+        <div class="cartlea">
+            <img src="greenscientist.png">
+            <p class="pe">Um novo remédio inovador está sendo testado em laboratório</p><p>12/8/25 Brasil</p>
+        </div>
+        <div class="cartlea">
+            <img src="https://i.ibb.co/QFZ8wHkY/man-staring-screen-computer-89650241.jpg">
+            <p class="pe">Dados apontão uso mais frequente de telas<br>após análises recentes</p><p>1/8/25 Brasil</p>
+        </div>
+         <div class="cartlea">
+            <img src="https://i.ibb.co/qFN3pFh9/images-q-tbn-ANd9-Gc-QH4cfdg-Cp4-KY0gu-OMz8-IZzo-XSY4-NRu-V-Rd-Kg-s.jpg">
+            <p class="pe">Testes para robos ultra inteligentes começam</p><p>12/8/25 Internacional</p>
+        </div>
+        <div class="cartlea">
+            <img src="https://i.ibb.co/0RMg4Rt4/images-q-tbn-ANd9-Gc-TLFdgr-ROTUp-Db-QGp9a-TYp-ALl-Chr-Io-Tnp-Kjs-Q-s.jpg">
+            <p class="pe">O valor do bitcoin cai, queda ja erá prevista por especialistas?</p><p>10/4/25 Internacional</p>
+        </div>
+        <div class="cartlea">
+            <img src="celular.jpg">
+            <p class="pe">Novos celulares chegarem em breve para todos os estados</p><p>13/8/25 Brasil</p>
+        </div>
+        <div class="cartlea">
+            <img src="10g.png">
+            <p class="pe">10G logo chegara em outros lugares do mundo incluindo Brasil</p><p>6/8/25 Internacional</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial,sans-serif;
+    }
+    #navezao ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #navezao {
+        background-color: rgb(156, 9, 9);
+        width: 180px;
+        margin-top: -5px;
+        overflow: hidden;
+        height: 0;
+        transition: height 0.5s ease;
+    }
+
+    #navezao li {
+        border: 3px solid rgb(156, 9, 9);
+        background-color: rgb(255, 255, 255);
+        width: 120px;
+        margin: 5px;
+        padding: 10px;
+    }
+ 
+    #navezao li:hover {
+        background-color: rgb(180, 9, 9);
+        transform: scale(1.2);
+    }
+     #navezao li:hover a {
+        color: rgb(255, 255, 255);
+    }
+
+    #navezao li a {
+        text-decoration: none;
+        color: rgb(156, 9, 9);
+    }
+
+    header {
+        background-color: rgb(156, 9, 9);
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    header h1{
+        font-size: 30px;
+    }
+    header h1 a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    header h1 a:hover{
+        color: rgb(255, 31, 31);
+    }
+    #btn{
+        background-color: rgb(156, 9, 9);
+        color: rgb(255, 255, 255);
+        position: absolute;
+        left: 96%;
+        top: 60%;
+        padding: 20px 18px;
+        border-radius: 5px;
+        border: none;
+    }
+    #btn:hover{
+        background-color: rgb(228, 37, 37);
+    }
+    #fecalt{
+        background-color: rgb(156, 9, 9);
+        color: rgb(255, 255, 255);
+        border: 3px solid rgb(255, 255, 255);
+        font-size: 20px;
+    }
+    #fecalt:hover{
+        background-color: rgb(228, 37, 37);
+    }
+    #fontc {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .labc{
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+
+    #navbtn{
+        background-color: rgb(156, 9, 9);
+        height: 450px;
+        width: 200px;
+        display: none;
+        position: fixed;
+        margin-left: 80%;
+        margin-top: 50px;
+        border: 3px solid rgb(0, 0, 0);
+        z-index: 10;
+    }
+    #navbtn h2{
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+    .fila {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 50px;
+    }
+
+    .cartlea {
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+
+    .cartlea img {
+        border-radius: 8px;
+        object-fit: cover;
+        width: 300px;
+        height: 200px;
+        transition: transform 0.3s ease;
+    }
+    .cartlea img:hover{
+        transform: scale(1.1);
+    }
+     .pe {
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+</style>
+<script>
+    const he = document.querySelector(".logo");
+    const na = document.getElementById("navezao");
+
+    he.addEventListener("click", function () {
+        if (na.style.height === "0px" || na.style.height === "") {
+            na.style.height = na.scrollHeight + "px";
+        } else {
+            na.style.height = "0px";
+        }
+    });
+
+   document.querySelectorAll("#btn, #fecalt").forEach(el => {
+    el.addEventListener("click", function () {
+        const navezaobtn = document.getElementById("navbtn");
+        if (navezaobtn.style.display === "block") {
+            navezaobtn.style.display = "none";
+        } else {
+            navezaobtn.style.display = "block";
+        }
+    });
+});
+const fontChange = document.getElementById("fontc");
+
+if (localStorage.getItem("fonteS")) {
+    document.body.style.fontFamily = localStorage.getItem("fonteS");
+    fontChange.value = localStorage.getItem("fonteS");
+}
+
+fontChange.addEventListener("change", function () {
+    document.body.style.fontFamily = this.value;
+    localStorage.setItem("fonteS", this.value);
+});
+
+</script>

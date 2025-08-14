@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+</head>
+
+<body>
+    <header id="cabeza">
+        <img class="logo" src="Znote.png" width="auto" height="140px">
+        <h1><a href="pg1.html">Novidades</a></h1>
+        <h1><a href="pg2.html">Política</a></h1>
+        <h1><a href="pg4.html">Economia</a></h1>
+    </header>
+    <nav id="navezao">
+        <ul>
+            <li><a href="pg1.html">Novidades</a></li>
+            <li><a href="pg2.html">Política</a></li>
+            <li><a href="pg3.html">Tecnologia</a></li>
+            <li><a href="pg4.html">Economia</a></li>
+            <li><a href="pg5.html">Saúde</a></li>
+            <li><a href="pg6.html">Natureza</a></li>
+            <li><a href="pg7.html">Sobre</a></li>
+            <li><a href="pg8.html">Contato</a></li>
+        </ul>
+    </nav>
+    <button id="btn"><--</button>
+    <div id="navbtn">
+        <button id="fecalt">X</button>
+        <h2>Configurações</h2>
+        <label for="fontc" class="labc">Escolher fonte:</label> 
+        <select id="fontc"> 
+         <option value="Arial, sans-serif">Fonte 1</option> 
+         <option value="'Times New Roman', serif">Fonte 2</option>
+         <option value="'Courier New', monospace">Fonte 3</option>
+        </select>
+    </div>
+    <section class="contato">
+    <h1>Opções para contato:</h1>
+    <h2>Email: znote404@gmail.com</h2>
+    <img src="Znote.png" width="100px">
+</section>
+    
+</body>
+
+</html>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial,sans-serif;
+    }
+    #navezao ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #navezao {
+        background-color: rgb(156, 9, 9);
+        width: 180px;
+        margin-top: -5px;
+        overflow: hidden;
+        height: 0;
+        transition: height 0.5s ease;
+    }
+
+    #navezao li {
+        border: 3px solid rgb(156, 9, 9);
+        background-color: rgb(255, 255, 255);
+        width: 120px;
+        margin: 5px;
+        padding: 10px;
+    }
+ 
+    #navezao li:hover {
+        background-color: rgb(180, 9, 9);
+        transform: scale(1.2);
+    }
+     #navezao li:hover a {
+        color: rgb(255, 255, 255);
+    }
+
+    #navezao li a {
+        text-decoration: none;
+        color: rgb(156, 9, 9);
+    }
+
+    header {
+        background-color: rgb(156, 9, 9);
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    header h1{
+        font-size: 30px;
+    }
+    header h1 a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    header h1 a:hover{
+        color: rgb(255, 31, 31);
+    }
+    #btn{
+        background-color: rgb(156, 9, 9);
+        color: rgb(255, 255, 255);
+        position: absolute;
+        left: 96%;
+        top: 60%;
+        padding: 20px 18px;
+        border-radius: 5px;
+        border: none;
+    }
+    #btn:hover{
+        background-color: rgb(228, 37, 37);
+    }
+    #fecalt{
+        background-color: rgb(156, 9, 9);
+        color: rgb(255, 255, 255);
+        border: 3px solid rgb(255, 255, 255);
+        font-size: 20px;
+    }
+    #fecalt:hover{
+        background-color: rgb(228, 37, 37);
+    }
+    #fontc {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .labc{
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+
+    #navbtn{
+        background-color: rgb(156, 9, 9);
+        height: 450px;
+        width: 200px;
+        display: none;
+        position: fixed;
+        margin-left: 80%;
+        margin-top: 50px;
+        border: 3px solid rgb(0, 0, 0);
+        z-index: 10;
+    }
+    #navbtn h2{
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+    .contato{
+        text-align: center;
+        background-color: rgb(156, 9, 9);
+        width: 300px;
+        color: rgb(255, 255, 255);
+        margin-left: 40%;
+    }
+
+</style>
+<script>
+    const he = document.querySelector(".logo");
+    const na = document.getElementById("navezao");
+
+    he.addEventListener("click", function () {
+        if (na.style.height === "0px" || na.style.height === "") {
+            na.style.height = na.scrollHeight + "px";
+        } else {
+            na.style.height = "0px";
+        }
+    });
+
+   document.querySelectorAll("#btn, #fecalt").forEach(el => {
+    el.addEventListener("click", function () {
+        const navezaobtn = document.getElementById("navbtn");
+        if (navezaobtn.style.display === "block") {
+            navezaobtn.style.display = "none";
+        } else {
+            navezaobtn.style.display = "block";
+        }
+    });
+});
+const fontChange = document.getElementById("fontc");
+
+if (localStorage.getItem("fonteS")) {
+    document.body.style.fontFamily = localStorage.getItem("fonteS");
+    fontChange.value = localStorage.getItem("fonteS");
+}
+
+fontChange.addEventListener("change", function () {
+    document.body.style.fontFamily = this.value;
+    localStorage.setItem("fonteS", this.value);
+});
+
+</script>
